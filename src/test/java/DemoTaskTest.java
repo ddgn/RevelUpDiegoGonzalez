@@ -5,8 +5,6 @@ import PageObjects.HomePage;
 import PageObjects.OrderDetailsPage;
 import PageObjects.ThankYouPage;
 import Utils.OrderSaver;
-import com.sun.org.apache.xpath.internal.operations.Or;
-import org.omg.CORBA.ORB;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,8 +12,9 @@ import org.testng.annotations.Test;
 public class DemoTaskTest extends BaseTest {
 
     @Test
-    public void demoTaskRevelUp() throws InterruptedException {
-        HomePage homePage = new HomePage(getDriver(), 10);;
+    public void demoTaskRevelUp() {
+
+        HomePage homePage = new HomePage(getDriver(), 10);
         Assert.assertTrue(homePage.isPageLoaded(), "Home Page is not loaded correctly");
         homePage.clickPrevailingTaxGroup();
         homePage.waitPopUpLoaded();
